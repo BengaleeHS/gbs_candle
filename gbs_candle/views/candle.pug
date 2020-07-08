@@ -1,0 +1,28 @@
+﻿doctype html
+html
+  head
+    meta(charset='UTF-8')
+    title GBS Candle | Home
+    style(type='text/css').
+      body{margin:0;font-size:100%;}
+      div#content{color:black; width:auto; margin-left:80px ;padding:20px}
+      div.sidebar{ height: 100%; width: 80px; position:fixed;background-color: orange; box-shadow:1px 0px 5px 2px gray; left:0%; top:0%; transition:0.1s}
+      button.sidebutton{width:inherit;height:80px;border:none;background-color:orange;transition:inherit;color:white;font-size:1.2em}
+      div.sidebar>button{display:block}
+      button.sidebutton[selected] {background-color:orangered;}
+      button.logout:hover, button.sidebutton:hover {background-color:#ffd280}
+      button.logout{width:inherit;height:80px;border:none;background-color:orange;position:fixed;left:inherit;bottom:0%;transition:inherit;color:white;font-size:1em}
+      div.card{width:250px;height:300px;margin:20px; border:none; box-shadow:0px 0px 5px 1px gray;background-color:#f7f9f9 ;padding:20px;display:inline-block;vertical-align:middle;}
+
+  body
+    div.sidebar
+      button.sidebutton(onclick='ChangeMenu(0)') 일정
+      button.sidebutton(onclick='ChangeMenu(1)') 급식
+      button.sidebutton(selected, onclick='ChangeMenu(2)') 메인
+      button.sidebutton(onclick='ChangeMenu(3)') 소문
+      button.sidebutton(onclick='ChangeMenu(4)') 과제
+      button.logout(onclick='Logout()') 로그아웃
+    div#content
+      
+
+script(type='text/javascript', src="/candleweb.js")
